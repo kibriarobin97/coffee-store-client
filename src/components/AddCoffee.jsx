@@ -28,12 +28,14 @@ const AddCoffee = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            Swal.fire({
-                title: 'Success!',
-                text: 'Coffee Added Successfully',
-                icon: 'success',
-                confirmButtonText: 'okay'
-              })
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Coffee Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'okay'
+                  })
+            }
               form.reset()
         })
 
