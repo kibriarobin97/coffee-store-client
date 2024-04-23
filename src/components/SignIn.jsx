@@ -12,7 +12,7 @@ const SignIn = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        // console.log(email, password)
 
         signInUser(email, password)
             .then(result => {
@@ -22,7 +22,7 @@ const SignIn = () => {
                     lastLoggedAt: result.user?.metadata?.lastSignInTime 
                 }
                 // update last logged in the database
-                fetch('http://localhost:5000/user', {
+                fetch('https://coffee-store-server-ab73cc0as-robins-projects-819ca55a.vercel.app/user', {
                     method: "PATCH",
                     headers: {
                         "content-type": "application/json"
@@ -32,7 +32,7 @@ const SignIn = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                })
+                })  
             })
             .catch(error => {
                 console.error(error)
