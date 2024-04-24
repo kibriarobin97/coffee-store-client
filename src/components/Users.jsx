@@ -40,8 +40,8 @@ const Users = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map(user => <tr key={user._id}>
-                                <th>1</th>
+                            users.map((user, idx) => <tr key={user._id}>
+                                <th>{idx+1}</th>
                                 <td>{user.email}</td>
                                 <td>{user.createdAt}</td>
                                 <td>{user.lastLoggedAt}</td>
